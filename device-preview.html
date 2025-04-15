@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรแกรมคำนวณอายุ - Device Preview</title>
+    <style>
+        /* Reset & Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            margin-bottom: 40px;
+            color: #333;
+            text-align: center;
+        }
+        
+        /* Device Preview Container */
+        .device-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            width: 100%;
+            max-width: 1400px;
+        }
+        
+        .device {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .device-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #444;
+        }
+        
+        /* Device Frames */
+        .device-frame {
+            background: #111;
+            border-radius: 36px;
+            padding: 10px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        /* Desktop */
+        .desktop-frame {
+            width: 800px;
+            height: 500px;
+            border-radius: 10px;
+            padding: 20px 20px 30px;
+            background: #333;
+        }
+        
+        .desktop-screen {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .desktop-base {
+            width: 160px;
+            height: 10px;
+            background: #777;
+            border-radius: 0 0 5px 5px;
+            margin: 0 auto;
+            margin-top: 5px;
+        }
+        
+        /* Tablet */
+        .tablet-frame {
+            width: 400px;
+            height: 550px;
+        }
+        
+        .tablet-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+            background: #fff;
+        }
+        
+        .tablet-camera {
+            width: 8px;
+            height: 8px;
+            background: #333;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            right: 50%;
+            transform: translateX(50%);
+        }
+        
+        .tablet-button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #222;
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Mobile */
+        .mobile-frame {
+            width: 300px;
+            height: 600px;
+        }
+        
+        .mobile-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+            background: #fff;
+        }
+        
+        .mobile-notch {
+            width: 90px;
+            height: 25px;
+            background: #111;
+            border-radius: 0 0 15px 15px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>โปรแกรมคำนวณอายุและอายุงาน - แสดงผลตามอุปกรณ์</h1>
+    
+    <div class="device-container">
+        <!-- Desktop Preview -->
+        <div class="device">
+            <div class="device-title">คอมพิวเตอร์</div>
+            <div class="device-frame desktop-frame">
+                <div class="desktop-screen">
+                    <iframe src="index.html" title="Desktop Preview"></iframe>
+                </div>
+            </div>
+            <div class="desktop-base"></div>
+        </div>
+        
+        <!-- Tablet Preview -->
+        <div class="device">
+            <div class="device-title">แท็บเล็ต</div>
+            <div class="device-frame tablet-frame">
+                <div class="tablet-camera"></div>
+                <div class="tablet-screen">
+                    <iframe src="index.html" title="Tablet Preview"></iframe>
+                </div>
+                <div class="tablet-button"></div>
+            </div>
+        </div>
+        
+        <!-- Mobile Preview -->
+        <div class="device">
+            <div class="device-title">มือถือ</div>
+            <div class="device-frame mobile-frame">
+                <div class="mobile-notch"></div>
+                <div class="mobile-screen">
+                    <iframe src="index.html" title="Mobile Preview"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,2 +1,2 @@
-# -V.2
-โปรแกรมคำนวณอายุ V.2
+# Age-and-employment-period-calculation-program
+Age and employment period calculation program  โปรแกรมคำนวณอายุและอายุงาน

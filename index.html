@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรแกรมคำนวณอายุและอายุงาน</title>
+    <!-- เชื่อมต่อกับไฟล์ CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- iOS Status Bar -->
+    <div class="status-bar">
+        <div class="time">08:59</div>
+        <div class="status-icons">
+            <div class="signal">&#9650;&#9650;&#9650;</div>
+            <div class="wifi">&#x25CF;&#x25CF;&#x25CF;</div>
+            <div class="battery">74%</div>
+        </div>
+    </div>
+    
+    <!-- Header Navigation -->
+    <div class="nav-header">
+        <div class="nav-back"></div>
+        <div class="nav-title">โปรแกรมคำนวณอายุและอายุ...</div>
+        <div class="nav-menu">
+            <div class="nav-menu-dot"></div>
+            <div class="nav-menu-dot"></div>
+            <div class="nav-menu-dot"></div>
+        </div>
+    </div>
+    
+    <!-- Main App Container -->
+    <div class="app-container">
+        <div class="app-content rainbow-border">
+            <!-- Rainbow Left Border -->
+            <div class="rainbow-left"></div>
+            
+            <!-- หน้าหลัก - มีคำแนะนำ -->
+            <div class="page homepage active" id="page-home">
+                <h1 class="app-title">โปรแกรมคำนวณอายุและอายุงาน</h1>
+                <p class="app-description">
+                    โปรแกรมนี้ช่วยให้คุณคำนวณอายุปัจจุบันและอายุงานได้อย่างรวดเร็วและแม่นยำ พร้อมด้วยการแสดงผลแบบสวยงาม
+                </p>
+                
+                <!-- Infographic Section -->
+                <div class="infographic">
+                    <h2 class="infographic-title">วิธีใช้งาน</h2>
+                    <div class="infographic-grid">
+                        <div class="info-item">
+                            <div class="info-icon">📆</div>
+                            <div class="info-title">เลือกวันเกิด</div>
+                            <div class="info-value">เลือกวัน เดือน ปีเกิด</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">💼</div>
+                            <div class="info-title">เลือกวันเริ่มงาน</div>
+                            <div class="info-value">เลือกวันที่เริ่มทำงาน</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">🧮</div>
+                            <div class="info-title">คำนวณอัตโนมัติ</div>
+                            <div class="info-value">แสดงผลทันที</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📊</div>
+                            <div class="info-title">ผลลัพธ์ละเอียด</div>
+                            <div class="info-value">แสดงปี เดือน วัน</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="copyright">© 2025 โปรแกรมคำนวณอายุและอายุงาน - พัฒนาด้วย ❤️</p>
+            </div>
+            
+            <!-- หน้ากรอกข้อมูล -->
+            <div class="page" id="page-input">
+                <div class="input-page">
+                    <!-- Input Sidebar -->
+                    <div class="input-sidebar">
+                        <div class="sidebar-label">วัน</div>
+                        <div class="sidebar-label">เดือน</div>
+                        <div class="sidebar-label">ปี</div>
+                        <div class="sidebar-label">เกิด</div>
+                        <div class="blue-line"></div>
+                        
+                        <!-- ช่องเลือกวันที่แยกแต่ละช่อง -->
+                        <div class="select-container">
+                            <div class="select-wrapper">
+                                <div class="select-arrow"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="select-container">
+                            <div class="select-wrapper">
+                                <div class="select-arrow"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="select-container">
+                            <div class="select-wrapper">
+                                <div class="select-arrow"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-label" style="margin-top: 25px;">วัน</div>
+                        <div class="sidebar-label">เดือน</div>
+                    </div>
+                    
+                    <!-- Input Content -->
+                    <div class="input-content">
+                        <h2 class="input-title">กรอกข้อมูล</h2>
+                        <p class="input-description">กรุณากรอกวันเดือนปีเกิดและวันเดือนปีที่เข้าทำงาน</p>
+                        
+                        <!-- Mode Toggle Switch -->
+                        <div class="mode-toggle-container">
+                            <label class="switch">
+                                <input type="checkbox" id="mode-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="mode-label" id="mode-label">ทั่วไป</span>
+                        </div>
+                        
+                        <div class="date-input-container">
+                            <div class="date-group">
+                                <h3 class="date-group-title">วันเดือนปีเกิด</h3>
+                                <div class="date-selects">
+                                    <select class="date-select" id="birth-day">
+                                        <option value="" disabled selected>วัน</option>
+                                        <!-- จะถูกเติมด้วย JavaScript -->
+                                    </select>
+                                    <select class="date-select" id="birth-month">
+                                        <option value="" disabled selected>เดือน</option>
+                                        <!-- จะถูกเติมด้วย JavaScript -->
+                                    </select>
+                                    <select class="date-select" id="birth-year">
+                                        <option value="" disabled selected>ปี</option>
+                                        <!-- จะถูกเติมด้วย JavaScript -->
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="date-group">
+                                <h3 class="date-group-title">วันเดือนปีที่เข้าทำงาน</h3>
+                                <div class="date-selects">
+                                    <select class="date-select" id="work-day">
+                                        <option value="" disabled selected>วัน</option>
+                                        <!-- จะถูกเติมด้วย JavaScript -->
+                                    </select>
+                                    <select class="date-select" id="work-month">
+                                        <option value="" disabled selected>เดือน</option>
+                                        <!-- จะถูกเติมด้วย JavaScript -->
+                                    </select>
+                                    <select class="date-select" id="work-year">
+                                        <option value="" disabled selected>ปี</option>
+                                        <!-- จะถูกเติมด้วย JavaScript -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="calculate-btn" id="calculate-btn">คำนวณอายุและอายุงาน</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- หน้าแสดงผล -->
+            <div class="page" id="page-results">
+                <div class="results-page">
+                    <h2 class="results-title">ผลการคำนวณ</h2>
+                    
+                    <div class="results-container">
+                        <div class="result-card">
+                            <div class="result-label">
+                                <span>วันเดือนปีเกิด</span>
+                                <span>🎂</span>
+                            </div>
+                            <div class="result-value" id="birth-date-result"></div>
+                            <div class="result-note" id="birth-day-of-week"></div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">
+                                <span>อายุปัจจุบัน</span>
+                                <span>⏱️</span>
+                            </div>
+                            <div class="result-value" id="age-result"></div>
+                            <div class="result-slider">
+                                <div class="result-slider-fill" id="age-slider-fill"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">
+                                <span>วันเดือนปีที่เข้าทำงาน</span>
+                                <span>💼</span>
+                            </div>
+                            <div class="result-value" id="work-date-result"></div>
+                            <div class="result-note" id="work-day-of-week"></div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">
+                                <span>อายุงาน</span>
+                                <span>📈</span>
+                            </div>
+                            <div class="result-value" id="work-age-result"></div>
+                            <div class="result-slider">
+                                <div class="result-slider-fill" id="work-age-slider-fill"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- ส่วนแสดงวันเกษียณอายุราชการ (จะแสดงเฉพาะในโหมดราชการ) -->
+                        <div class="result-card" id="retirement-date-container" style="display: none;">
+                            <div class="result-label">
+                                <span>วันเกษียณอายุราชการ</span>
+                                <span>🏆</span>
+                            </div>
+                            <div class="result-value" id="retirement-date-result"></div>
+                            <div class="result-note" id="retirement-day-of-week"></div>
+                        </div>
+                    </div>
+                    
+                    <button class="back-btn" id="recalculate-btn">คำนวณใหม่อีกครั้ง</button>
+                </div>
+            </div>
+            
+            <!-- Rainbow Right Border -->
+            <div class="rainbow-right"></div>
+        </div>
+        
+        <!-- แถบเมนูบาร์ด้านล่าง -->
+        <div class="tab-bar">
+            <div class="tab-item active" id="tab-home">
+                <div class="tab-icon">🏠</div>
+                <div class="tab-label">หน้าหลัก</div>
+            </div>
+            <div class="tab-item" id="tab-input">
+                <div class="tab-icon">📝</div>
+                <div class="tab-label">กรอกข้อมูล</div>
+            </div>
+            <div class="tab-item" id="tab-results">
+                <div class="tab-icon">📊</div>
+                <div class="tab-label">ผลลัพธ์</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Navigation -->
+    <div class="navigation-footer">
+        <div class="page-indicator">26 of 26</div>
+        <div class="nav-arrows">
+            <div class="nav-arrow">←</div>
+            <div class="nav-arrow">→</div>
+        </div>
+    </div>
+    
+    <!-- Reply Box -->
+    <div class="reply-box">
+        <div class="reply-label">Reply to Claude</div>
+        <div class="reply-actions">
+            <div class="reply-button">+</div>
+            <div class="reply-button">🎤</div>
+        </div>
+    </div>
+    
+    <!-- Home Indicator Line -->
+    <div class="home-indicator"></div>
+    
+    <!-- เชื่อมต่อกับไฟล์ JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
